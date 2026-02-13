@@ -1,0 +1,30 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-body">
+        <h3 class="card-title mb-4">Add / Edit Note</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                {{ form.title }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Content</label>
+                {{ form.content }}
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Save Note
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
